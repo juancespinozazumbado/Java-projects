@@ -37,3 +37,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/projects/WebApplication/nbproject/private/
+/projects/WebApplication/dist/
+/projects/WebApplication2/nbproject/private/

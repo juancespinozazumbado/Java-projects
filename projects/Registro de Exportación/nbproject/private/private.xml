@@ -3,30 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/registro/de/exportación/Main.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/models/Cliente.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/models/TipoExportacion.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/utils/ConversorDePesosImpl.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/utils/ConversorDePesos.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/data/RepositorioDeExportaciones.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/data/RepositorioGenerico.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/data/RepositorioGenericoImpl.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/models/EntidadBase.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/models/Exportacion.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/models/TipoServicio.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/data/RepositorioDeExportacionesImpl.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/data/RepositorioDeClientes.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/data/RepositorioDeClientesImpl.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/usecases/ServicioDeExportaciones.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/usecases/ServicioDeExportacionesImpl.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/test/exportacion/utils/ConvertidorPesosImplTest.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/utils/CustomUtils.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/registro/de/exportación/OpcionesMenu.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/validators/CommonValidador.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/exceptions/CustomValidacionException.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/validators/ValidadorNombre.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/validators/ValidadorIdCliente.java</file>
-            <file>file:/C:/Users/JuanCarlosEspinozaZu/OneDrive%20-%20Xum%20Technologies/Documents/NetBeansProjects/Registro%20de%20Exportación/src/exportacion/validators/ValidadorHandler.java</file>
+            <file>file:/C:/desings/Uned%20progra%20II/Java-projects/projects/Registro%20de%20Exportación/src/exportacion/models/Cliente.java</file>
         </group>
     </open-files>
 </project-private>
