@@ -16,6 +16,12 @@ services:
   #      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect 
   #   depends_on:
   #     - postgres
+  orders_service:
+    build:
+      context: ./src/orders
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8080"
 
   # postgres:
   #   image: postgres:16
