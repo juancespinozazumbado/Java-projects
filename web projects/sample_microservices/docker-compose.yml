@@ -1,12 +1,15 @@
 version: "3.8"
 
 services:
-  invetory_service:
+  inventory_service:
     build:
       context: ./src/inventory
       dockerfile: Dockerfile
     ports:
       - "8081:8080"
+    environment:
+      SPRING_PROFILES_ACTIVE: debug
+      LOGGING_LEVEL_ROOT: DEBUG          
   #   environment:
   #      spring.datasource.url:jdbc:postgresql: //postgres:5432/inventorydb
   #      spring.datasource.username: postgres
@@ -22,6 +25,13 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8082:8080"
+    environment:
+      INVENTORY_APP_PORT: 8081
+      INVENTORY_BASE_URL: http://inventory_service:8081
+      SPRING_PROFILES_ACTIVE: debug
+      LOGGING_LEVEL_ROOT: DEBUG 
+    depends_on:
+      - inventory_service
 
   # postgres:
   #   image: postgres:16
