@@ -10,7 +10,9 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: debug
       LOGGING_LEVEL_ROOT: DEBUG
-      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK: DEBUG          
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK: DEBUG  
+      ORDERS_BASE_URL: http://orders_service:8080
+      ENV: local     
   #   environment:
   #      spring.datasource.url:jdbc:postgresql: //postgres:5432/inventorydb
   #      spring.datasource.username: postgres

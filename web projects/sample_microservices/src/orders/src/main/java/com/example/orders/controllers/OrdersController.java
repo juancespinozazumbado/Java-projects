@@ -60,6 +60,8 @@ public class OrdersController {
             //String Url = "http://localhost:8081"+ "/v1/products/?id="+ id;
             //String Url = inventoryBaseUrl + "/v1/products/?id=" + id;
 
+            logger.warn("Base URL"+ inventoryBaseUrl);
+
             URI Url = UriComponentsBuilder
                     .fromHttpUrl(inventoryBaseUrl)
                     .path("/v1/products")
@@ -93,7 +95,8 @@ public class OrdersController {
 
         }catch(Exception ex){
 
-            return ResponseEntity.ok(new ProductStatusResponse(id, "problem:", ex.getMessage()));
+
+            return ResponseEntity.ok(new ProductStatusResponse(id, "problem:", ex));
 
         }
             
@@ -129,7 +132,7 @@ public class OrdersController {
 
         public String Id; 
         public String Status;
-        public String Error;
+        public Object Error;
 
         public ProductStatusResponse(String Id, String status){
 
@@ -138,7 +141,7 @@ public class OrdersController {
   
 
         }
-        public ProductStatusResponse(String Id, String status, String Error){
+        public ProductStatusResponse(String Id, String status, Object Error){
 
             this.Id = Id; 
             this.Status = status;
