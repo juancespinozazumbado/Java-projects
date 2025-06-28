@@ -9,7 +9,8 @@ services:
       - "8081:8080"
     environment:
       SPRING_PROFILES_ACTIVE: debug
-      LOGGING_LEVEL_ROOT: DEBUG          
+      LOGGING_LEVEL_ROOT: DEBUG
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK: DEBUG          
   #   environment:
   #      spring.datasource.url:jdbc:postgresql: //postgres:5432/inventorydb
   #      spring.datasource.username: postgres
@@ -27,9 +28,13 @@ services:
       - "8082:8080"
     environment:
       INVENTORY_APP_PORT: 8081
-      INVENTORY_BASE_URL: http://inventory_service:8081
+      INVENTORY_BASE_URL: http://inventory_service:8080
       SPRING_PROFILES_ACTIVE: debug
       LOGGING_LEVEL_ROOT: DEBUG 
+      LOGGING_LEVEL_ORG_SPRINGFRAMEWORK: DEBUG
+      logging.level.org.apache.coyote.http11: WARN
+      jdk.internal.httpclient.debug: WARN
+      logging.level.org.springframework.web: TRACE       
     depends_on:
       - inventory_service
 

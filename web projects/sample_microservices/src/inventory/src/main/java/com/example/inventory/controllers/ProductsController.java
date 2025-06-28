@@ -13,7 +13,7 @@ import org.springframework.web.client.RestTemplate;
 import com.example.inventory.models.Product;
 
 @RestController
-@RequestMapping("/v1/products/")
+@RequestMapping("/v1/products")
 public class ProductsController {
 
     @Autowired
@@ -25,7 +25,7 @@ public class ProductsController {
         this.repository = products;
     }
 
-    @GetMapping("/")
+    @GetMapping("")
     public ResponseEntity<List<ProductsResponse>> getAll(@RequestParam(required=false) String id) {
 
         try {

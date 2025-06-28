@@ -1,10 +1,15 @@
 package com.example.orders.controllers;
 
+import java.net.URI;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,10 +18,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+import org.springframework.web.util.UriComponentsBuilder;
+
+// import lombok.extern.slf4j.Slf4j;
 
 
 @RestController
 @RequestMapping("/v1/orders")
+// @Slf4j
 public class OrdersController {
 
     private final RestTemplate resttemplate;
@@ -26,6 +35,8 @@ public class OrdersController {
     // private int MaxCount;
     @Value("${INVENTORY_BASE_URL}")
     private String inventoryBaseUrl;
+
+   Logger logger =  LoggerFactory.getLogger(OrdersController.class);
 
     /*, @Value("${INVENTORY_BASE_URL}") String baseUrl */
     public OrdersController(RestTemplate template) {
@@ -47,13 +58,32 @@ public class OrdersController {
         try{
             
             //String Url = "http://localhost:8081"+ "/v1/products/?id="+ id;
-            String Url = inventoryBaseUrl + "/v1/products/?id="+ id;
+            //String Url = inventoryBaseUrl + "/v1/products/?id=" + id;
+
+            URI Url = UriComponentsBuilder
+                    .fromHttpUrl(inventoryBaseUrl)
+                    .path("/v1/products")
+                    .queryParam("id", id)
+                    .build()
+                    .encode()
+                    .toUri();
+
+            logger.info("the result URI: " + Url);   
+            logger.info("Controller logs");   
+            logger.info(id);  
+
+            HttpHeaders headers = new HttpHeaders();
+            headers.setContentType(MediaType.APPLICATION_JSON);
+
+            // HttpEntity<Object> requestEntity = new HttpEntity<>(null, headers);
+
             List<GetProductResponse> response = resttemplate.exchange(
                 Url,
                 HttpMethod.GET,
                 null,
                 new ParameterizedTypeReference<List<GetProductResponse>>() {}
             ).getBody();
+
 
             if(response != null && !response.isEmpty())
                 return ResponseEntity.ok().body(new ProductStatusResponse(response.get(0).getName(),  "SUCCESS"));
