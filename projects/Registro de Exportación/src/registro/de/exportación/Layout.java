@@ -46,6 +46,8 @@ public class Layout extends javax.swing.JFrame {
         Titulo = new javax.swing.JLabel();
         PrincipalAdd1 = new exportacion.swin.PanelRedondo();
         Titulo1 = new javax.swing.JLabel();
+        AddClient = new javax.swing.JPanel();
+        agregarCliente1 = new exportacion.components.AgregarCliente();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -125,6 +127,11 @@ public class Layout extends javax.swing.JFrame {
         B_HomeNavigation.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         B_HomeNavigation.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         B_HomeNavigation.setIconTextGap(15);
+        B_HomeNavigation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_HomeNavigationActionPerformed(evt);
+            }
+        });
         MainOPtiones.add(B_HomeNavigation, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 134, 28));
 
         B_HomeNavigation1.setBackground(new java.awt.Color(226, 227, 232));
@@ -164,6 +171,11 @@ public class Layout extends javax.swing.JFrame {
         B_HomeNavigation3.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         B_HomeNavigation3.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         B_HomeNavigation3.setIconTextGap(15);
+        B_HomeNavigation3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_HomeNavigation3ActionPerformed(evt);
+            }
+        });
         MainOPtiones.add(B_HomeNavigation3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, 134, 28));
 
         javax.swing.GroupLayout SideBarLayout = new javax.swing.GroupLayout(SideBar);
@@ -245,7 +257,7 @@ public class Layout extends javax.swing.JFrame {
         main.setLayout(mainLayout);
         mainLayout.setHorizontalGroup(
             mainLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, mainLayout.createSequentialGroup()
+            .addGroup(mainLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
                 .addComponent(PrincipalAdd1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -280,6 +292,19 @@ public class Layout extends javax.swing.JFrame {
 
         Main.add(Index, "card3");
 
+        javax.swing.GroupLayout AddClientLayout = new javax.swing.GroupLayout(AddClient);
+        AddClient.setLayout(AddClientLayout);
+        AddClientLayout.setHorizontalGroup(
+            AddClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(agregarCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        AddClientLayout.setVerticalGroup(
+            AddClientLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(agregarCliente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+
+        Main.add(AddClient, "card3");
+
         Containner.add(Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 1120, 760));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -300,12 +325,35 @@ public class Layout extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_S_HomeNavigationMouseClicked
 
+    private void B_HomeNavigation3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_HomeNavigation3ActionPerformed
+        // TODO add your handling code here:
+        
+        // Agregar el pannel de agregar cliente
+        this.Main.removeAll();
+        this.Main.add(this.AddClient);
+        this.Main.repaint();
+        this.Main.revalidate();
+        
+    }//GEN-LAST:event_B_HomeNavigation3ActionPerformed
+
+    private void B_HomeNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_HomeNavigationActionPerformed
+        // TODO add your handling code here:
+        // Agregar el pannel de agregar cliente
+        this.Main.removeAll();
+        this.Main.add(this.Index);
+        this.Main.repaint();
+        this.Main.revalidate();
+        
+        
+    }//GEN-LAST:event_B_HomeNavigationActionPerformed
+
     /**
      * @param args the command line arguments
      */
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel AddClient;
     private javax.swing.JButton B_HomeNavigation;
     private javax.swing.JButton B_HomeNavigation1;
     private javax.swing.JButton B_HomeNavigation2;
@@ -320,6 +368,7 @@ public class Layout extends javax.swing.JFrame {
     private javax.swing.JPanel SideBar;
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel Titulo1;
+    private exportacion.components.AgregarCliente agregarCliente1;
     private exportacion.swin.PanelRedondo main;
     private exportacion.swin.PanelRedondo navBar;
     private javax.swing.JLabel sideBarTitle;
