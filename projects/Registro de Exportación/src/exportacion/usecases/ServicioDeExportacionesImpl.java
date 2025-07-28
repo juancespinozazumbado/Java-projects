@@ -6,6 +6,8 @@ import exportacion.data.RepositorioDeExportaciones;
 import exportacion.models.Cliente;
 import exportacion.models.Exportacion;
 import exportacion.utils.ConversorDePesos;
+import java.util.logging.Level;
+import registro.de.exportación.Layout;
 
 /**
  *
@@ -21,6 +23,7 @@ public class ServicioDeExportacionesImpl implements ServicioDeExportaciones {
     private final RepositorioDeClientes Clientes; 
     private final RepositorioDeExportaciones Exportaciones;
     private final ConversorDePesos Conversor;
+     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Layout.class.getName());
 
     public ServicioDeExportacionesImpl(RepositorioDeClientes clientes, RepositorioDeExportaciones exportaciones, ConversorDePesos conversor) {
         this.Exportaciones = exportaciones;
@@ -50,6 +53,23 @@ public class ServicioDeExportacionesImpl implements ServicioDeExportaciones {
             return false;
         }
 
+    }
+    
+    @Override
+    public boolean CrearCliente(Cliente cliente){
+        
+        try{
+            
+            this.Clientes.Agregar(cliente);
+            
+            return true;
+            
+        }catch(Exception ex){
+            
+            logger.log(Level.SEVERE, ex.getMessage());
+            return false;
+            
+        }    
     }
 }
 

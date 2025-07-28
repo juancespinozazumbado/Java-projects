@@ -13,14 +13,16 @@ public class Cliente extends EntidadBase {
     
     private String Id_Cliente; 
     private String Nombre_Completo;
+    private String Correo;
     private List<Exportacion> Exportaciones;
 
     
-    public Cliente(String id, String nombre_completo){
+    public Cliente(String id, String nombre_completo, String correo){
         super();
         this.Exportaciones = new ArrayList<Exportacion>();
         this.Id_Cliente = id; 
         this.Nombre_Completo = nombre_completo; 
+        this.Correo = correo;
     }
     
     
@@ -46,6 +48,10 @@ public class Cliente extends EntidadBase {
         
         this.Exportaciones.add(exportacion);
         
+    }
+    
+    public String getCorreo (){
+        return this.Correo;
     }
 }
 

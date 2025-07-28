@@ -79,7 +79,7 @@ public class OpcionesMenu {
             double KilogramosAEmbracar = ValidadorHandler.doubleValidadorHandler("Por favor ingrese el valor de los Kilogramos a Embalar: \n",
                     entrada -> CommonValidador.ValidarNegativos(entrada));
 
-            Cliente cliente = new Cliente(cedula, nombre);
+            //Cliente cliente = new Cliente(cedula, nombre);
 
             Exportacion exportacion = new Exportacion(
               
@@ -89,11 +89,11 @@ public class OpcionesMenu {
                     KilogramosAEmbracar
             );
             
-            exportacion.AsignarCliente(cliente);
+           // exportacion.AsignarCliente(cliente);
             
-            cliente.AsignarExportacion(exportacion);
+          //  cliente.AsignarExportacion(exportacion);
 
-            Servicio.CrearExportacion(cliente, exportacion);
+           // Servicio.CrearExportacion(cliente, exportacion);
 
             System.out.println("Datos registrados exitosamente!");
 

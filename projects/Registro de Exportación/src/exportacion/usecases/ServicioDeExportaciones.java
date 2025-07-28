@@ -11,5 +11,6 @@ import exportacion.models.Exportacion;
 public interface ServicioDeExportaciones {
     
     public boolean CrearExportacion(Cliente cliente, Exportacion exportacion);
+    public boolean CrearCliente(Cliente cliente);
 
 }

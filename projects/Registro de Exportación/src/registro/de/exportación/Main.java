@@ -1,5 +1,14 @@
 package registro.de.exportación;
 
+import exportacion.data.RepositorioDeClientes;
+import exportacion.data.RepositorioDeClientesImpl;
+import exportacion.data.RepositorioDeExportaciones;
+import exportacion.data.RepositorioDeExportacionesImpl;
+import exportacion.models.Cliente;
+import exportacion.usecases.ServicioDeExportaciones;
+import exportacion.usecases.ServicioDeExportacionesImpl;
+import exportacion.utils.ConversorDePesos;
+import exportacion.utils.ConversorDePesosImpl;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -12,13 +21,24 @@ public class Main {
     private static boolean isActivo = true;
     private static Scanner scanner = new Scanner(System.in);
 
+
+    private static RepositorioDeClientes Clientes = new RepositorioDeClientesImpl();
+    private static RepositorioDeExportaciones Exportaciones = new RepositorioDeExportacionesImpl();
+    private static ConversorDePesos Conversor = new ConversorDePesosImpl();
+
+    private static ServicioDeExportaciones Servicio = new ServicioDeExportacionesImpl(Clientes, Exportaciones, Conversor);
     
     public static void main(String[] args) {
 
         try {
             //MostrarMenu();
            
-           java.awt.EventQueue.invokeLater(() -> new Layout().setVisible(true));
+            
+           Clientes.Agregar(new Cliente("504020630", "Default CLiente", "juan-4002@hotmail.com"));
+           Clientes.Agregar(new Cliente("504890633", "Genesis Piñar Li", "juan-4002@hotmail.com"));
+           Clientes.Agregar(new Cliente("506320556", "Jose Carlos Espinoza", "juan-4002@hotmail.com"));
+           
+           java.awt.EventQueue.invokeLater(() -> new Layout(Servicio,Clientes,  Exportaciones ).setVisible(true));
 
         } catch (Exception ex) {
 
