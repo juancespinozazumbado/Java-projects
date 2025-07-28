@@ -4,6 +4,7 @@ package exportacion.data;
 import exportacion.models.Exportacion;
 import exportacion.models.TipoExportacion;
 import exportacion.models.TipoServicio;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +12,7 @@ import java.util.List;
  *
  * @author JuanCarlosEspinozaZu
  */
-public class RepositorioDeExportacionesImpl extends RepositorioGenericoImpl<Exportacion> implements RepositorioDeExportaciones {
+public class RepositorioDeExportacionesImpl extends RepositorioGenericoImpl<Exportacion> implements RepositorioDeExportaciones, Serializable  {
     
     public RepositorioDeExportacionesImpl(){
         super();

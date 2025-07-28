@@ -1,8 +1,11 @@
 package exportacion.utils;
+
+import java.io.Serializable;
+
 /**
  * @author JuanCarlosEspinozaZu
  */
-public class ConversorDePesosImpl implements ConversorDePesos {
+public class ConversorDePesosImpl implements ConversorDePesos, Serializable  {
     
     private final int FACTOR_KILO = 1000;
     private final double FACTOR_LIBRA = 2.20462;

@@ -6,6 +6,7 @@ import exportacion.data.RepositorioDeExportaciones;
 import exportacion.models.Cliente;
 import exportacion.models.Exportacion;
 import exportacion.utils.ConversorDePesos;
+import java.io.Serializable;
 import java.util.logging.Level;
 import registro.de.exportación.Layout;
 
@@ -18,11 +19,11 @@ import registro.de.exportación.Layout;
  * 
  * 
  */
-public class ServicioDeExportacionesImpl implements ServicioDeExportaciones {
+public class ServicioDeExportacionesImpl implements ServicioDeExportaciones, Serializable  {
     
-    private final RepositorioDeClientes Clientes; 
-    private final RepositorioDeExportaciones Exportaciones;
-    private final ConversorDePesos Conversor;
+    private  RepositorioDeClientes Clientes; 
+    private  RepositorioDeExportaciones Exportaciones;
+    private  final ConversorDePesos Conversor;
      private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(Layout.class.getName());
 
     public ServicioDeExportacionesImpl(RepositorioDeClientes clientes, RepositorioDeExportaciones exportaciones, ConversorDePesos conversor) {
@@ -71,5 +72,7 @@ public class ServicioDeExportacionesImpl implements ServicioDeExportaciones {
             
         }    
     }
+    
+    //public setRepositorios()
 }
 

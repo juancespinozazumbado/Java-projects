@@ -1,6 +1,7 @@
 
 package exportacion.utils;
 
+import java.io.Serializable;
 import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -18,7 +19,7 @@ import java.util.Locale;
  * Tambien se usa este patron en las clases Validador que son Objetos que unicamente tienen como funcion validar reglas de negocio
  * 
  */
-public class CustomUtils {
+public class CustomUtils implements Serializable {
 
     private static final DateTimeFormatter FORMATO_FECHA
             =  DateTimeFormatter.ofPattern("dd MMM uuuu : hh:mm a", Locale.ENGLISH);

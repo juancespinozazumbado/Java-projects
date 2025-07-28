@@ -1,5 +1,6 @@
 package exportacion.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,7 +10,7 @@ import java.util.List;
  * UNED Programacion intermedia
  * II perido 2025 
  */
-public class Cliente extends EntidadBase {
+public class Cliente extends EntidadBase implements Serializable{
     
     private String Id_Cliente; 
     private String Nombre_Completo;

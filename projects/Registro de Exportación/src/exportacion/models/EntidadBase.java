@@ -1,6 +1,7 @@
 
 package exportacion.models;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
@@ -10,7 +11,7 @@ import java.util.Random;
  *  Se investigo la seccion Programación orientada a objetos: polimorfismo e interfaces
  * paginas 361-407
  */
-public abstract class EntidadBase {
+public abstract class EntidadBase implements Serializable {
     
     private String Id; 
     

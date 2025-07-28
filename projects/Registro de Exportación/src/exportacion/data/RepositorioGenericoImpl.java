@@ -1,6 +1,7 @@
 package exportacion.data;
 
 import exportacion.models.EntidadBase;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  *
  * @author JuanCarlosEspinozaZu
  */
-public abstract class RepositorioGenericoImpl<Entity extends EntidadBase> implements RepositorioGenerico<Entity> {
+public abstract class RepositorioGenericoImpl<Entity extends EntidadBase> implements RepositorioGenerico<Entity>, Serializable  {
     
     protected final List<Entity> Entidades; 
 
@@ -46,4 +47,14 @@ public abstract class RepositorioGenericoImpl<Entity extends EntidadBase> implem
        return entidades;
     }
     
+  /*  public boolean cargarDatos(List<Entity> entidades){
+        
+        try{
+            
+            this.Entidades = entidades;
+        }catch(Exception ex){
+            System.out.println(ex);
+        }
+    }
+    */
 }

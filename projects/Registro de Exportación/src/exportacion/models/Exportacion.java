@@ -1,5 +1,6 @@
 package exportacion.models;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -8,7 +9,7 @@ import java.util.Date;
  *
  * @author JuanCarlosEspinozaZu
  */
-public class Exportacion extends EntidadBase {
+public class Exportacion extends EntidadBase implements Serializable {
 
     private TipoExportacion Tipo_Exportacion;
     private LocalDateTime Fecha_Exportacion;

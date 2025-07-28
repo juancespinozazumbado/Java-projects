@@ -1,6 +1,7 @@
 package exportacion.data;
 
 import exportacion.models.Cliente;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import java.util.List;
  *
  * @author JuanCarlosEspinozaZu
  */
-public class RepositorioDeClientesImpl extends RepositorioGenericoImpl<Cliente> implements RepositorioDeClientes{
+public class RepositorioDeClientesImpl extends RepositorioGenericoImpl<Cliente> implements RepositorioDeClientes, Serializable {
     
     public RepositorioDeClientesImpl(){
         super();
