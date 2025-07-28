@@ -7,11 +7,19 @@ package registro.de.exportación;
 import exportacion.data.RepositorioDeClientes;
 import exportacion.data.RepositorioDeExportaciones;
 import exportacion.models.Cliente;
+import exportacion.models.Exportacion;
+import exportacion.models.TipoExportacion;
+import exportacion.models.TipoServicio;
 import exportacion.usecases.ServicioDeExportaciones;
 import exportacion.usecases.ServicioDeExportacionesImpl;
+import exportacion.utils.CustomUtils;
+import java.awt.event.ItemEvent;
 import java.util.Arrays;
 import java.util.Vector;
 import java.util.logging.Level;
+import java.util.stream.Collectors;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.ListSelectionModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -92,6 +100,45 @@ public class Layout extends javax.swing.JFrame {
         CedulaLabel = new javax.swing.JLabel();
         B_AddClient_NavBtn = new javax.swing.JButton();
         InitialNameLabel = new javax.swing.JLabel();
+        Exportacion_index = new javax.swing.JPanel();
+        main4 = new exportacion.swin.PanelRedondo();
+        PrincipalAdd9 = new exportacion.swin.PanelRedondo();
+        Titulo10 = new javax.swing.JLabel();
+        ExportScrol = new javax.swing.JScrollPane();
+        ExportTable = new javax.swing.JTable();
+        Titulo12 = new javax.swing.JLabel();
+        NombreCliExportLabel1 = new javax.swing.JLabel();
+        Titulo14 = new javax.swing.JLabel();
+        CorreoClienteExpoLabel = new javax.swing.JLabel();
+        Titulo16 = new javax.swing.JLabel();
+        TipoExpoLabel = new javax.swing.JLabel();
+        Titulo17 = new javax.swing.JLabel();
+        CedulaExptLabel = new javax.swing.JLabel();
+        B_AddExportacion = new javax.swing.JButton();
+        InitialNameLabelEx = new javax.swing.JLabel();
+        Titulo18 = new javax.swing.JLabel();
+        ZonaEnvioLabel = new javax.swing.JLabel();
+        Titulo19 = new javax.swing.JLabel();
+        TipoServicioLabel = new javax.swing.JLabel();
+        KilosExpoLabel = new javax.swing.JLabel();
+        Titulo20 = new javax.swing.JLabel();
+        Titulo21 = new javax.swing.JLabel();
+        FechaExpoLabel = new javax.swing.JLabel();
+        AddExportacion = new javax.swing.JPanel();
+        main5 = new exportacion.swin.PanelRedondo();
+        PrincipalAdd7 = new exportacion.swin.PanelRedondo();
+        Titulo7 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        KilosExpoText = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        AddExpoBtn = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        ZonaEnvioComboBox = new javax.swing.JComboBox<>();
+        ClienteConboBox = new javax.swing.JComboBox<>();
+        TipoExpoCombobox = new javax.swing.JComboBox<>();
+        TipoServCombobox = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(102, 102, 102));
@@ -161,6 +208,11 @@ public class Layout extends javax.swing.JFrame {
         B_ExportacionNavigation.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         B_ExportacionNavigation.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
         B_ExportacionNavigation.setIconTextGap(15);
+        B_ExportacionNavigation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_ExportacionNavigationActionPerformed(evt);
+            }
+        });
         MainOPtiones.add(B_ExportacionNavigation, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 170, 28));
 
         B_ClientsNavigation.setBackground(new java.awt.Color(204, 204, 204));
@@ -224,7 +276,7 @@ public class Layout extends javax.swing.JFrame {
             SideBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(SideBarLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(MainOPtiones, javax.swing.GroupLayout.DEFAULT_SIZE, 198, Short.MAX_VALUE)
+                .addComponent(MainOPtiones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         SideBarLayout.setVerticalGroup(
@@ -623,6 +675,390 @@ public class Layout extends javax.swing.JFrame {
 
         Main.add(Clientes_index, "card3");
 
+        Exportacion_index.setBackground(new java.awt.Color(255, 255, 255));
+        Exportacion_index.setForeground(new java.awt.Color(102, 102, 102));
+
+        main4.setForeground(new java.awt.Color(51, 51, 51));
+
+        PrincipalAdd9.setBackground(new java.awt.Color(255, 255, 255));
+
+        Titulo10.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        Titulo10.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo10.setText("Nombre");
+
+        ExportTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Numero", "Cedula", "Cliente", "Tipo", "Zona", "Servicio", "Peso"
+            }
+        ));
+        ExportScrol.setViewportView(ExportTable);
+
+        Titulo12.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 36)); // NOI18N
+        Titulo12.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo12.setText("Exportaciones");
+
+        NombreCliExportLabel1.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        NombreCliExportLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        NombreCliExportLabel1.setText("$Nombre");
+
+        Titulo14.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        Titulo14.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo14.setText("Correo");
+
+        CorreoClienteExpoLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        CorreoClienteExpoLabel.setForeground(new java.awt.Color(0, 0, 0));
+        CorreoClienteExpoLabel.setText("$Correo");
+
+        Titulo16.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        Titulo16.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo16.setText("Tipo");
+
+        TipoExpoLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        TipoExpoLabel.setForeground(new java.awt.Color(0, 0, 0));
+        TipoExpoLabel.setText("$Correo");
+
+        Titulo17.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        Titulo17.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo17.setText("Cedula");
+
+        CedulaExptLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        CedulaExptLabel.setForeground(new java.awt.Color(0, 0, 0));
+        CedulaExptLabel.setText("$Correo");
+
+        B_AddExportacion.setBackground(new java.awt.Color(204, 204, 204));
+        B_AddExportacion.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        B_AddExportacion.setForeground(new java.awt.Color(51, 51, 51));
+        B_AddExportacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/exportacion/img/plus.png"))); // NOI18N
+        B_AddExportacion.setText("Agregar");
+        B_AddExportacion.setToolTipText("");
+        B_AddExportacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        B_AddExportacion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        B_AddExportacion.setHideActionText(true);
+        B_AddExportacion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        B_AddExportacion.setIconTextGap(15);
+        B_AddExportacion.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        B_AddExportacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B_AddExportacionActionPerformed(evt);
+            }
+        });
+
+        InitialNameLabelEx.setBackground(new java.awt.Color(153, 153, 153));
+        InitialNameLabelEx.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 24)); // NOI18N
+        InitialNameLabelEx.setForeground(new java.awt.Color(51, 51, 51));
+        InitialNameLabelEx.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        InitialNameLabelEx.setText("$J");
+        InitialNameLabelEx.setOpaque(true);
+
+        Titulo18.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        Titulo18.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo18.setText("Zona Envio");
+
+        ZonaEnvioLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        ZonaEnvioLabel.setForeground(new java.awt.Color(0, 0, 0));
+        ZonaEnvioLabel.setText("$Correo");
+
+        Titulo19.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        Titulo19.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo19.setText("Servicio");
+
+        TipoServicioLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        TipoServicioLabel.setForeground(new java.awt.Color(0, 0, 0));
+        TipoServicioLabel.setText("$Correo");
+
+        KilosExpoLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        KilosExpoLabel.setForeground(new java.awt.Color(0, 0, 0));
+        KilosExpoLabel.setText("$Correo");
+
+        Titulo20.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        Titulo20.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo20.setText("Kilogramos");
+
+        Titulo21.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        Titulo21.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo21.setText("Fecha");
+
+        FechaExpoLabel.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        FechaExpoLabel.setForeground(new java.awt.Color(0, 0, 0));
+        FechaExpoLabel.setText("$Correo");
+
+        javax.swing.GroupLayout PrincipalAdd9Layout = new javax.swing.GroupLayout(PrincipalAdd9);
+        PrincipalAdd9.setLayout(PrincipalAdd9Layout);
+        PrincipalAdd9Layout.setHorizontalGroup(
+            PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                        .addComponent(InitialNameLabelEx, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(B_AddExportacion, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(ExportScrol, javax.swing.GroupLayout.PREFERRED_SIZE, 993, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                                .addComponent(Titulo17, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                                .addGap(43, 43, 43)
+                                .addComponent(CedulaExptLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                                .addComponent(Titulo10, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(NombreCliExportLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                                .addComponent(Titulo14, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(CorreoClienteExpoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(152, 152, 152)
+                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(Titulo20, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Titulo19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Titulo18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(Titulo16, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(Titulo21, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(42, 42, 42)
+                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TipoServicioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 288, Short.MAX_VALUE)
+                            .addComponent(KilosExpoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TipoExpoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(ZonaEnvioLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(FechaExpoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(70, 70, 70))))
+            .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(Titulo12, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        PrincipalAdd9Layout.setVerticalGroup(
+            PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(Titulo12, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(B_AddExportacion, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                    .addComponent(InitialNameLabelEx, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Titulo17)
+                            .addComponent(CedulaExptLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PrincipalAdd9Layout.createSequentialGroup()
+                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(FechaExpoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Titulo21, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Titulo10, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NombreCliExportLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Titulo14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(CorreoClienteExpoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                        .addComponent(ExportScrol, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))
+                    .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                                .addComponent(TipoExpoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(ZonaEnvioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(TipoServicioLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(KilosExpoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(PrincipalAdd9Layout.createSequentialGroup()
+                                .addComponent(Titulo16, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Titulo18, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Titulo19, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Titulo20, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        javax.swing.GroupLayout main4Layout = new javax.swing.GroupLayout(main4);
+        main4.setLayout(main4Layout);
+        main4Layout.setHorizontalGroup(
+            main4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(main4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PrincipalAdd9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(65, Short.MAX_VALUE))
+        );
+        main4Layout.setVerticalGroup(
+            main4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(main4Layout.createSequentialGroup()
+                .addGap(11, 11, 11)
+                .addComponent(PrincipalAdd9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout Exportacion_indexLayout = new javax.swing.GroupLayout(Exportacion_index);
+        Exportacion_index.setLayout(Exportacion_indexLayout);
+        Exportacion_indexLayout.setHorizontalGroup(
+            Exportacion_indexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(main4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        Exportacion_indexLayout.setVerticalGroup(
+            Exportacion_indexLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Exportacion_indexLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(main4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        Main.add(Exportacion_index, "card3");
+
+        AddExportacion.setBackground(new java.awt.Color(255, 255, 255));
+        AddExportacion.setForeground(new java.awt.Color(102, 102, 102));
+
+        main5.setForeground(new java.awt.Color(51, 51, 51));
+
+        PrincipalAdd7.setBackground(new java.awt.Color(255, 255, 255));
+
+        Titulo7.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
+        Titulo7.setForeground(new java.awt.Color(0, 0, 0));
+        Titulo7.setText("Nueva Exportacion");
+
+        jLabel5.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel5.setText("Cliente");
+
+        KilosExpoText.setFont(new java.awt.Font("Yu Gothic UI Semibold", 1, 14)); // NOI18N
+        KilosExpoText.setForeground(new java.awt.Color(51, 51, 51));
+        KilosExpoText.setText("correo");
+        KilosExpoText.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(102, 102, 102), 2, true));
+
+        jLabel6.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel6.setText("Tipo");
+
+        AddExpoBtn.setBackground(new java.awt.Color(102, 102, 102));
+        AddExpoBtn.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
+        AddExpoBtn.setForeground(new java.awt.Color(255, 255, 255));
+        AddExpoBtn.setText("Agregar");
+        AddExpoBtn.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 51), 2, true));
+        AddExpoBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddExpoBtnActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel8.setText("Tipo Servicio");
+
+        ZonaEnvioComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Costa Rica", "Estados Unidos", "Canada", "Europa", "Africa", "Sur America", " " }));
+
+        ClienteConboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        TipoExpoCombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Carga Pesada", "Carga Ligera" }));
+
+        TipoServCombobox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Barco", "Avion" }));
+
+        jLabel9.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Zona de Envio");
+
+        jLabel10.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setText("Kilogramos");
+
+        javax.swing.GroupLayout PrincipalAdd7Layout = new javax.swing.GroupLayout(PrincipalAdd7);
+        PrincipalAdd7.setLayout(PrincipalAdd7Layout);
+        PrincipalAdd7Layout.setHorizontalGroup(
+            PrincipalAdd7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PrincipalAdd7Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(PrincipalAdd7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(KilosExpoText, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TipoServCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TipoExpoCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ZonaEnvioComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(PrincipalAdd7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AddExpoBtn, javax.swing.GroupLayout.DEFAULT_SIZE, 621, Short.MAX_VALUE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Titulo7, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ClienteConboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        PrincipalAdd7Layout.setVerticalGroup(
+            PrincipalAdd7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PrincipalAdd7Layout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(Titulo7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(ClienteConboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addGap(18, 18, 18)
+                .addComponent(TipoExpoCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24)
+                .addComponent(jLabel9)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ZonaEnvioComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(22, 22, 22)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(TipoServCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(33, 33, 33)
+                .addComponent(jLabel10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(KilosExpoText, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(AddExpoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(116, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout main5Layout = new javax.swing.GroupLayout(main5);
+        main5.setLayout(main5Layout);
+        main5Layout.setHorizontalGroup(
+            main5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, main5Layout.createSequentialGroup()
+                .addContainerGap(240, Short.MAX_VALUE)
+                .addComponent(PrincipalAdd7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(216, 216, 216))
+        );
+        main5Layout.setVerticalGroup(
+            main5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(main5Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(PrincipalAdd7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout AddExportacionLayout = new javax.swing.GroupLayout(AddExportacion);
+        AddExportacion.setLayout(AddExportacionLayout);
+        AddExportacionLayout.setHorizontalGroup(
+            AddExportacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(main5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        AddExportacionLayout.setVerticalGroup(
+            AddExportacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddExportacionLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(main5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        Main.add(AddExportacion, "card3");
+
         Containner.add(Main, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 60, 1120, 760));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -760,6 +1196,111 @@ public class Layout extends javax.swing.JFrame {
         
     }//GEN-LAST:event_B_HomeNavigationActionPerformed
 
+    private void B_AddExportacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_AddExportacionActionPerformed
+        // TODO add your handling code here:
+        
+        /// Handle Agregar Exportacion
+        ///
+        ///
+        ///
+        ///
+      
+        //this.ClienteConboBox.se
+        this.ClienteConboBox.setModel(new DefaultComboBoxModel(Clientes.ObtenerTodos().stream()
+                .map(p -> new Cliente(p.getIdCliente(), p.getNombre_Completo()))
+                .collect(Collectors.toCollection(Vector::new))));
+
+        
+        
+      /*  
+        this.ClienteConboBox.addActionListener(e -> {
+            @SuppressWarnings("unchecked")
+            JComboBox<MyRecord> cb = (JComboBox<MyRecord>) e.getSource();
+            MyRecord selected = (MyRecord) cb.getSelectedItem();
+            if (selected != null) {
+                System.out.println("Selected record: " + selected);
+                // Now use selected.getName(), selected.getValue(), etc.
+            }
+        });
+        
+        */
+      
+        this.ClienteConboBox.addItemListener(event -> {
+            if (event.getStateChange() == ItemEvent.SELECTED) {
+                Cliente selected = (Cliente) event.getItem();
+                System.out.println("Item selected: " + selected);
+                // act on selected
+            }
+        });
+        
+            this.Main.removeAll();
+            this.Main.add(this.AddExportacion);
+            this.Main.repaint();
+            this.Main.revalidate();
+    }//GEN-LAST:event_B_AddExportacionActionPerformed
+
+    private void B_ExportacionNavigationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B_ExportacionNavigationActionPerformed
+        // TODO add your handling code here:
+        
+        //handleNavigation_Exportaciones
+        
+        try{
+            
+            handleExportacionesPageNavigation();
+        }catch(Exception ex){
+             System.out.print(ex);
+            logger.log(Level.SEVERE, ex.getMessage());
+        }
+      
+        
+        
+    }//GEN-LAST:event_B_ExportacionNavigationActionPerformed
+
+    private void AddExpoBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddExpoBtnActionPerformed
+        // TODO add your handling code here:
+
+        /// HandleAddExportacion
+        ///
+        ///
+       
+        try {
+            String tipoExportacion = this.TipoExpoCombobox.getSelectedItem().toString();
+            String tipoServicio = this.TipoServCombobox.getSelectedItem().toString();
+            String zonaEnvio = this.ZonaEnvioComboBox.getSelectedItem().toString();
+            double kilos = Double.parseDouble(this.KilosExpoText.getText());
+
+            int index = this.ClienteConboBox.getSelectedIndex();
+
+            //TipoExportacion tipoExportacion, String ZonaEnvio,TipoServicio tipoServicio, double kilos_embalar
+            Exportacion exportacion = new Exportacion(
+                    (tipoExportacion == "Carga Pesada" ? TipoExportacion.ECP : TipoExportacion.ECS),
+                    zonaEnvio,
+                    (tipoServicio == "Avion" ? TipoServicio.AVION : TipoServicio.BARCO),
+                    kilos
+            );
+
+            Cliente cliente = Clientes.ObtenerTodos().get(index);
+            exportacion.AsignarCliente(cliente);
+            cliente.AsignarExportacion(exportacion);
+            ServicioExportaciones.CrearExportacion(cliente, exportacion);
+            
+            //limpíamos los inputs
+            
+            this.ClienteConboBox.setSelectedIndex(-1);
+            this.TipoExpoCombobox.setSelectedIndex(-1);
+            this.TipoServCombobox.setSelectedIndex(-1);
+            this.ZonaEnvioComboBox.setSelectedIndex(-1);
+            this.KilosExpoText.setText("");
+            
+            handleExportacionesPageNavigation();
+
+        } catch (Exception ex) {
+            System.out.print(ex);
+            logger.log(Level.SEVERE, ex.getMessage());
+        }
+
+    }//GEN-LAST:event_AddExpoBtnActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -822,50 +1363,164 @@ public class Layout extends javax.swing.JFrame {
         }
     }
 
+    
+    
+    
+    private void handleExportacionesPageNavigation() {
+        try {
+            Vector<Vector<Object>> datos = new Vector<>();
+            for (Exportacion expo : Exportaciones.ObtenerTodos()) {
+                Vector<Object> fila = new Vector<>();
+                fila.add(expo.GetId());
+                 fila.add(expo.getCliente().getIdCliente());
+                fila.add(expo.getCliente().getNombre_Completo());
+                fila.add(expo.getTipo_Exportacion().toString());
+                fila.add(expo.getZona_Envio());
+                fila.add(expo.getTipo_Servicio().toString());
+                fila.add(""+expo.getKilogramos_Embarcar()+" Kg");
+                
+                datos.add(fila);
+            }
+            Vector<String> columnas = new Vector<>(Arrays.asList("Numero", "Cedula", "Cliente", "Tipo", "Zona", "Servicio", "Peso"));
+            ExportTable.setModel(new DefaultTableModel(columnas, 0));
+
+            DefaultTableModel model = (DefaultTableModel) ExportTable.getModel();
+
+            for (Vector<Object> fila : datos) {
+
+                model.addRow(fila);
+            }
+
+            var Exportaciondf = Exportaciones.ObtenerTodos().get(0);
+            
+            this.InitialNameLabelEx.setText(Exportaciondf.getCliente().getNombre_Completo().trim().substring(0, 1).toUpperCase());
+            this.NombreCliExportLabel1.setText(Exportaciondf.getCliente().getNombre_Completo());
+            this.CedulaExptLabel.setText(Exportaciondf.getCliente().getIdCliente());
+            this.CorreoClienteExpoLabel.setText(Exportaciondf.getCliente().getCorreo());
+
+            this.FechaExpoLabel.setText(CustomUtils.formatLocalDateTime(Exportaciondf.getFecha_Exportacion()));
+            this.TipoExpoLabel.setText( Exportaciondf.getTipo_Exportacion() == TipoExportacion.ECP ?  "Carga Ligera" : "Carga Pesada");
+            this.TipoServicioLabel.setText(Exportaciondf.getTipo_Servicio().toString());
+            this.ZonaEnvioLabel.setText(Exportaciondf.getZona_Envio());
+            this.KilosExpoLabel.setText("" + Exportaciondf.getKilogramos_Embarcar());
+
+            this.ExportTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+            this.ExportTable.getSelectionModel().addListSelectionListener(e -> {
+                if (!e.getValueIsAdjusting()) {
+                    int row = this.ExportTable.getSelectedRow();
+                    if (row >= 0) {
+                        Exportacion Exportacion = Exportaciones.ObtenerTodos().get(row);
+                        System.out.println("Clicked row " + row + ": " + Exportacion.GetId());
+
+                        this.InitialNameLabelEx.setText(Exportacion.getCliente().getNombre_Completo().trim().substring(0, 1).toUpperCase());
+                        this.NombreCliExportLabel1.setText(Exportacion.getCliente().getNombre_Completo());
+                        this.CedulaExptLabel.setText(Exportacion.getCliente().getIdCliente());
+                        this.CorreoClienteExpoLabel.setText(Exportacion.getCliente().getCorreo());
+
+                        this.FechaExpoLabel.setText(CustomUtils.formatLocalDateTime(Exportacion.getFecha_Exportacion()));
+                        this.TipoExpoLabel.setText( Exportacion.getTipo_Exportacion() == TipoExportacion.ECP ?  "Carga Ligera" : "Carga Pesada");
+                        this.TipoServicioLabel.setText(Exportacion.getTipo_Servicio().toString());
+                        this.ZonaEnvioLabel.setText(Exportacion.getZona_Envio());
+                        this.KilosExpoLabel.setText("" + Exportacion.getKilogramos_Embarcar()+" Kg");
+                        // Now you can use rec.getName(), rec.getValue(), etc.
+                    }
+                }
+            });
+
+            this.Main.removeAll();
+            this.Main.add(this.Exportacion_index);
+            this.Main.repaint();
+            this.Main.revalidate();
+        } catch (Exception ex) {
+            System.out.print(ex);
+            logger.log(Level.SEVERE, ex.getMessage());
+        }
+    }
+    
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel AddClient;
     private javax.swing.JButton AddClienteBtn;
+    private javax.swing.JButton AddExpoBtn;
+    private javax.swing.JPanel AddExportacion;
     private javax.swing.JButton B_AddClient_NavBtn;
+    private javax.swing.JButton B_AddExportacion;
     private javax.swing.JButton B_ClientsNavigation;
     private javax.swing.JButton B_ConfigNavigation;
     private javax.swing.JButton B_ExportacionNavigation;
     private javax.swing.JButton B_HomeNavigation;
+    private javax.swing.JLabel CedulaExptLabel;
     private javax.swing.JLabel CedulaLabel;
     private javax.swing.JScrollPane ClientScrolT;
     private javax.swing.JTable ClientTable;
+    private javax.swing.JComboBox<String> ClienteConboBox;
     private javax.swing.JPanel Clientes_index;
     private javax.swing.JPanel Containner;
+    private javax.swing.JLabel CorreoClienteExpoLabel;
     private javax.swing.JLabel CorreoClienteLabel;
     private javax.swing.JTextField CorreoClienteTxt;
+    private javax.swing.JScrollPane ExportScrol;
+    private javax.swing.JTable ExportTable;
+    private javax.swing.JPanel Exportacion_index;
+    private javax.swing.JLabel FechaExpoLabel;
     private javax.swing.JTextField IdClienteText;
     private javax.swing.JPanel Index;
     private javax.swing.JLabel InitialNameLabel;
+    private javax.swing.JLabel InitialNameLabelEx;
+    private javax.swing.JLabel KilosExpoLabel;
+    private javax.swing.JTextField KilosExpoText;
     private javax.swing.JPanel Main;
     private exportacion.swin.PanelRedondo MainOPtiones;
     private javax.swing.JLabel NExportacionesClienteLabel;
+    private javax.swing.JLabel NombreCliExportLabel1;
     private javax.swing.JLabel NombreClienteLabel;
     private javax.swing.JTextField NombreClienteText;
     private exportacion.swin.PanelRedondo PrincipalAdd4;
     private exportacion.swin.PanelRedondo PrincipalAdd5;
     private exportacion.swin.PanelRedondo PrincipalAdd6;
+    private exportacion.swin.PanelRedondo PrincipalAdd7;
     private exportacion.swin.PanelRedondo PrincipalAdd8;
+    private exportacion.swin.PanelRedondo PrincipalAdd9;
     private javax.swing.JLabel S_HomeNavigation;
     private javax.swing.JLabel S_HomeNavigation1;
     private javax.swing.JPanel SideBar;
+    private javax.swing.JComboBox<String> TipoExpoCombobox;
+    private javax.swing.JLabel TipoExpoLabel;
+    private javax.swing.JComboBox<String> TipoServCombobox;
+    private javax.swing.JLabel TipoServicioLabel;
+    private javax.swing.JLabel Titulo10;
     private javax.swing.JLabel Titulo11;
+    private javax.swing.JLabel Titulo12;
     private javax.swing.JLabel Titulo13;
+    private javax.swing.JLabel Titulo14;
     private javax.swing.JLabel Titulo15;
+    private javax.swing.JLabel Titulo16;
+    private javax.swing.JLabel Titulo17;
+    private javax.swing.JLabel Titulo18;
+    private javax.swing.JLabel Titulo19;
+    private javax.swing.JLabel Titulo20;
+    private javax.swing.JLabel Titulo21;
     private javax.swing.JLabel Titulo4;
     private javax.swing.JLabel Titulo5;
     private javax.swing.JLabel Titulo6;
+    private javax.swing.JLabel Titulo7;
     private javax.swing.JLabel Titulo8;
     private javax.swing.JLabel Titulo9;
+    private javax.swing.JComboBox<String> ZonaEnvioComboBox;
+    private javax.swing.JLabel ZonaEnvioLabel;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private exportacion.swin.PanelRedondo main1;
     private exportacion.swin.PanelRedondo main2;
     private exportacion.swin.PanelRedondo main3;
+    private exportacion.swin.PanelRedondo main4;
+    private exportacion.swin.PanelRedondo main5;
     private exportacion.swin.PanelRedondo navBar;
     // End of variables declaration//GEN-END:variables
 }

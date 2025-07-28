@@ -5,6 +5,9 @@ import exportacion.data.RepositorioDeClientesImpl;
 import exportacion.data.RepositorioDeExportaciones;
 import exportacion.data.RepositorioDeExportacionesImpl;
 import exportacion.models.Cliente;
+import exportacion.models.Exportacion;
+import exportacion.models.TipoExportacion;
+import exportacion.models.TipoServicio;
 import exportacion.usecases.ServicioDeExportaciones;
 import exportacion.usecases.ServicioDeExportacionesImpl;
 import exportacion.utils.ConversorDePesos;
@@ -37,6 +40,18 @@ public class Main {
            Clientes.Agregar(new Cliente("504020630", "Default CLiente", "juan-4002@hotmail.com"));
            Clientes.Agregar(new Cliente("504890633", "Genesis Piñar Li", "juan-4002@hotmail.com"));
            Clientes.Agregar(new Cliente("506320556", "Jose Carlos Espinoza", "juan-4002@hotmail.com"));
+           
+           Exportacion exp1 = new Exportacion( TipoExportacion.ECP ,"CRC", TipoServicio.AVION,895.55);
+           Exportacion exp2 = new Exportacion( TipoExportacion.ECS ,"USD", TipoServicio.BARCO,895.55);
+           
+           Clientes.ObtenerTodos().get(0).AsignarExportacion(exp2);
+           Clientes.ObtenerTodos().get(0).AsignarExportacion(exp1);
+           
+           exp1.AsignarCliente(Clientes.ObtenerTodos().get(0));
+           exp2.AsignarCliente(Clientes.ObtenerTodos().get(0));
+           
+           Exportaciones.Agregar(exp1);
+           Exportaciones.Agregar(exp2);
            
            java.awt.EventQueue.invokeLater(() -> new Layout(Servicio,Clientes,  Exportaciones ).setVisible(true));
 

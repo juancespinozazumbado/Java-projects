@@ -25,6 +25,14 @@ public class Cliente extends EntidadBase {
         this.Correo = correo;
     }
     
+       public Cliente(String id, String nombre_completo){
+        super();
+        this.Exportaciones = new ArrayList<Exportacion>();
+        this.Id_Cliente = id; 
+        this.Nombre_Completo = nombre_completo; 
+        this.Correo = "";
+    }
+    
     
     
 //################ Settters & Geters ###########################################
@@ -52,6 +60,11 @@ public class Cliente extends EntidadBase {
     
     public String getCorreo (){
         return this.Correo;
+    }
+    
+     @Override
+    public String toString(){
+        return Id_Cliente + " - "+ Nombre_Completo;
     }
 }
 
