@@ -32,3 +32,6 @@ x Kilo) y Carga embalada ($450 x Kilo) solo para cargas por barco.
 • Exportación Carga Suelta mantiene los precios establecidos ($450 por kilo en
 avión y $150 por kilo en barco), pero si la carga supera los 18 pies y es por avión,
 tiene un adicional de $100; si es por barco, el adicional es de $50
+
+## Interfaz grafica con Swin UI
+
