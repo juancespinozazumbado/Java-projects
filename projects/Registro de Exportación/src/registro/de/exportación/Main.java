@@ -38,8 +38,6 @@ public class Main {
            
             
            Clientes.Agregar(new Cliente("504020630", "Default CLiente", "juan-4002@hotmail.com"));
-           Clientes.Agregar(new Cliente("504890633", "Genesis Piñar Li", "juan-4002@hotmail.com"));
-           Clientes.Agregar(new Cliente("506320556", "Jose Carlos Espinoza", "juan-4002@hotmail.com"));
            
            Exportacion exp1 = new Exportacion( TipoExportacion.ECP ,"Costa Rica", TipoServicio.AVION,895.55);
            Exportacion exp2 = new Exportacion( TipoExportacion.ECS ,"Estados Unidos", TipoServicio.BARCO,895.55);
