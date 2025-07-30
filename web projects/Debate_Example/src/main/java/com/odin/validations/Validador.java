@@ -4,14 +4,17 @@
  */
 package com.odin.validations;
 
-import com.odin.exceptions.FormatoCedulaInvalidoException;
-
 /**
  *
  * @author JuanCarlosEspinozaZu
  */
-public interface FormatoCedulaValidator extends Validador {
+public interface Validador {
     
-    public boolean ValidateCedula(String cedula) throws FormatoCedulaInvalidoException;
+    public boolean ValidarNullOVacios(String valor) throws Exception;
+    
+    public boolean ValidarSoloNumeros(String valor) throws Exception;
+    
+    public boolean ValidarNegativos(int valor) throws Exception;
+    
     
 }

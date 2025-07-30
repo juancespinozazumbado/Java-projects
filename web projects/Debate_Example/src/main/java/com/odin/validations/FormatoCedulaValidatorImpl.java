@@ -12,7 +12,7 @@ import java.util.logging.Logger;
  *
  * @author JuanCarlosEspinozaZu
  */
-public class FormatoCedulaValidatorImpl implements FormatoCedulaValidator {
+public class FormatoCedulaValidatorImpl extends ValidadorImpl implements FormatoCedulaValidator{
 
     private final Logger logger = Logger.getLogger("logger");
 
@@ -44,5 +44,7 @@ public class FormatoCedulaValidatorImpl implements FormatoCedulaValidator {
             return false;
         }
     }
+
+
 
 }
