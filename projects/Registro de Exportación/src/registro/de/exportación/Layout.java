@@ -879,6 +879,11 @@ public class Layout extends javax.swing.JFrame {
         ZonaFiltroCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Costa Rica", "Estados Unidos", "Canada", "Europa", "Africa", "Sur America", " " }));
 
         ClienteFiltroComnbo1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        ClienteFiltroComnbo1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClienteFiltroComnbo1ActionPerformed(evt);
+            }
+        });
 
         Titulo23.setFont(new java.awt.Font("Yu Gothic UI Light", 1, 18)); // NOI18N
         Titulo23.setForeground(new java.awt.Color(0, 0, 0));
@@ -1022,7 +1027,7 @@ public class Layout extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Titulo20, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGroup(PrincipalAdd9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Titulo25, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(CostoExpoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1314,7 +1319,7 @@ public class Layout extends javax.swing.JFrame {
             main6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(main6Layout.createSequentialGroup()
                 .addComponent(PrincipalAdd11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 43, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         main6Layout.setVerticalGroup(
             main6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1623,6 +1628,10 @@ public class Layout extends javax.swing.JFrame {
             loadFromFile(fc.getSelectedFile());
         }
     }//GEN-LAST:event_LoadBtn1ActionPerformed
+
+    private void ClienteFiltroComnbo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClienteFiltroComnbo1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ClienteFiltroComnbo1ActionPerformed
 
     /**
      * @param args the command line arguments
