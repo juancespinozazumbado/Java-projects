@@ -44,3 +44,12 @@ build/
 /projects/WebApplication2/nbproject/private/
 /web projects/MessagesExpress/nbproject/private/
 /web projects/AngularJSPhoneCat/nbproject/private/
+
+
+## node versions
+/.nvm/
+/node_modules/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+.yarn-integrity
